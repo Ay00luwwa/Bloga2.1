@@ -1,0 +1,36 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block content %}
+<div class="container mt-5">
+    <h1 class="mb-4">About the Blog</h1>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <img src="{% static 'blog/Logo 5.png' %}" alt="About us" class="img-fluid rounded">
+        </div>
+        <div class="col-lg-6">
+            <div class="media content-section">
+                <div class="media-body">
+                    <h3>Who We Are</h3>
+                    <p>
+                        We are a group of passionate individuals who love sharing our thoughts, experiences, and knowledge 
+                        through our writings. This blog was started in 2020 with the aim to reach out to readers who share 
+                        the same interests.
+                    </p>
+                    <hr>
+                    <h3>Our Mission</h3>
+                    <p>
+                        To provide insightful, engaging, and meaningful content that enriches our readers' lives.
+                    </p>
+                    <hr>
+                    <h3>Join Us</h3>
+                    <p>
+                        Stay updated with our latest posts and share your thoughts in the comments. We value our community 
+                        and always strive to keep the conversation going.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
