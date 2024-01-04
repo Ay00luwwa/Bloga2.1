@@ -1,0 +1,87 @@
+{% extends "blog/base.html" %}
+{ % load static % }
+{% block content %}
+
+<style>
+.return{
+    border: none;
+    border-radius: 10px;
+}
+
+
+.return a{
+    text-decoration: none;
+}
+
+.no-border textarea {
+    border: none;
+    width: 100%;   
+    padding: 10px;
+}
+
+.thin-border textarea {
+    border: 1px solid #ccc;
+    width: 100%;   /* Takes up full width on mobile */
+    height: 150px; /* Adjust height for mobile */
+}
+
+/* Styles for larger screens using media query */
+
+@media screen and (min-width: 768px) {  /* Adjust breakpoint as needed. 768px is common for tablets. */
+    .no-border {
+        width: 200%;    /* Adjust width for larger screens */
+        padding: 20px;  /* Adjust padding for larger screens */
+    }
+
+    .thin-border textarea {
+        width: 69vh;     /* This width might be too large for typical use, adjust as needed */
+        height: 200px;  /* Adjust height for larger screens */
+    }
+}
+
+</style>
+    <div class="content-section">
+        <legend class="border-bottom mb-4">New Post</legend>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            
+            <div class="form-group no-border col-md-6" >
+                <label for="{{ form.title.id_for_label }}">Title:</label>
+                {{ form.title }}
+            </div>
+            
+            <div class="form-group thin-border col-md-6"  >
+                <label for="{{ form.content.id_for_label }}">Content:</label>
+                {{ form.content }}
+            </div>
+
+            <div class="form-group col-md-6 no-border">
+                <label for="{{ form.category.id_for_label }}">Category:</label>
+                {{ form.category }}
+            </div>
+
+            <div class="form-group thin-border col-md-6" >
+                <input type="file" name="images" multiple>
+                <label for="{{ form.image.id_for_label }}">Blog Description Image</label>
+                {{ form.image }}
+            </div>
+
+
+            
+            
+
+            <!-- Add other fields similarly if needed, e.g., an image or category -->
+
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Post</button>
+            </div>
+        </form>
+
+        
+            <a href="{% url 'blog-home' %}">
+                <button class=" btn btn-outline-info" type="submit">Home</button>
+            </a>
+            
+        
+    </div>
+{% endblock %}

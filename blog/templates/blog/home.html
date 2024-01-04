@@ -1,0 +1,114 @@
+{% extends "blog/base.html" %} {% load static %} {% block content %}
+
+<style>
+  .search-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 12px;
+  }
+
+  .search-input {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 25px 0 0 25px;
+    outline: none;
+    width: 250px;
+    transition: all 0.3s ease;
+  }
+
+  .search-input:hover,
+  .search-input:focus {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .search-button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .search-button:hover {
+    background-color: #0056b3;
+  }
+
+  .teaser-button {
+    border-radius: 5px;
+    border: 10px;
+    width: 100px;
+  }
+
+  .teaser-button:hover {
+    color: #020202;
+    background-color: #555;
+    box-shadow: #000;
+  }
+
+  .teaser-button a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  .rounded {
+    height: 300px;
+    width: 550px;
+  }
+</style>
+
+<form method="get" action="{% url 'search-view' %}" class="search-form">
+  <input
+    type="text"
+    name="query"
+    placeholder="Search for blog categories 🔎"
+    class="search-input"
+  />
+  <button type="submit" class="search-button">Search</button>
+</form>
+
+<div id="posts-container">
+  {% for post in posts %}
+  <article class="media content-section">
+    <img
+      class="rounded-circle article-img"
+      src="{{ post.author.profile.image.url }}"
+      alt=""
+    />
+    <div class="media-body">
+      <div class="article-metadata">
+        <a class="mr-2" href="{% url 'users-profile' post.author.username %}"
+          >{{ post.author.username }}</a
+        >
+        <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+      </div>
+      <h2>
+        <a class="article-title" href="{%url 'post_detail' post.id%}"
+          >{{ post.title }}</a
+        >
+      </h2>
+      <img
+        src="{{ post.image.url }}"
+        alt="Image for {{ post.title }}"
+        class="img-fluid mt-3 rounded"
+        width="400"
+        height="20"
+      />
+      <p class="article-content">{{ post.teaser }}</p>
+      <button class="teaser-button">
+        <a href="{%url 'post_detail' post.id%}" class="read-more"
+          >Read More<i class="bi bi-arrow"></i
+        ></a>
+      </button>
+    </div>
+  </article>
+  {% endfor %}
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="{% static 'blog/scripts.js' %}"></script>
+
+{% endblock content %}

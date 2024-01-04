@@ -1,0 +1,25 @@
+{% extends "blog/base.html" %}
+{% block content %}
+
+<style>
+    .content-section h2{
+        text-align: center;
+    }
+    .rounded{
+        width: auto;
+        height: 20vh;
+        border-radius: 20px;
+    }
+    .user-name{
+        font-weight: 900;
+    }
+</style>
+<div class="content-section">
+    <h2 class="user-name">{{ profile_user.username }}'s Profile</h2> <hr>
+    <!-- Assuming the User model has an associated Profile model with an image field -->
+    <img src="{{ profile_user.profile.image.url }}" alt="{{ profile_user.username }}'s Profile Image " class="rounded">
+    <p> <strong>Email:</strong>{{ profile_user.email }}</p>
+    <p> <strong>Bio</strong>{{ profile.bio }}</p>
+</div>
+    
+{% endblock %}
