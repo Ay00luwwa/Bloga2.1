@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloga</title>
+    <link rel="stylesheet" href="{% static 'blog/animations.css' %}">
+    <link rel="icon" sizes="32x32" href="{% static 'blog/favicon.png' %}">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <div class="intro-container">
+        <div data-aos="fade-down" data-aos-duration="2000">
+            <img src="{% static 'blog/Logo 5.png' %}" alt="Logo" class="fade-in-logo">
+        </div>
+        <div data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="3000">
+            <h2 class="fade-in-slogan">One Blog. Infinite discoveries.</h2>
+        </div>
+    </div>
+
+    <script src="{% static 'blog/animations.js' %}"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>
