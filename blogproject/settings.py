@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-# from .credentials import MAIL, PASSWORD
+from .credentials import MAIL, PASSWORD
 from pathlib import Path
 import os
 
@@ -29,7 +29,7 @@ DEBUG = False
 
 # ALLOWED_HOSTS = ['http://ayooluwa9040t.pythonanywhere.com/', '127.0.0.1', 'localhost', ayooluwa9040t.pythonanywhere.com]
 
-ALLOWED_HOSTS = ['ayooluwa9040t.pythonanywhere.com', 'www.ayooluwa9040t.pythonanywhere.com']
+ALLOWED_HOSTS = ['ayooluwa9040t.pythonanywhere.com', 'www.ayooluwa9040t.pythonanywhere.com', '127.0.0.1', 'localhost',]
 
 
 
@@ -163,13 +163,13 @@ LOGIN_REDIRECT_URL = 'blog-home'
 LOGIN_URL ='login'
 
 
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = True
-# EMAIL_HOST_USER = 'ijidakinroayooluwa@gmail.com'
-# EMAIL_HOST_PASSWORD = 'qzmi ddxk dypa uywh'
-# DEFAULT_FROM_EMAIL = 'Bloga<noreply@ay00luwa.vercel.app>'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = MAIL
+EMAIL_HOST_PASSWORD = PASSWORD
+DEFAULT_FROM_EMAIL = 'Bloga<noreply@bloga.blog2.1@gmail.com>'
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
