@@ -21,21 +21,21 @@
 
 .thin-border textarea {
     border: 1px solid #ccc;
-    width: 100%;   /* Takes up full width on mobile */
-    height: 150px; /* Adjust height for mobile */
+    width: 100%;   
+    height: 150px; 
 }
 
-/* Styles for larger screens using media query */
 
-@media screen and (min-width: 768px) {  /* Adjust breakpoint as needed. 768px is common for tablets. */
+
+@media screen and (min-width: 768px) {  
     .no-border {
-        width: 200%;    /* Adjust width for larger screens */
-        padding: 20px;  /* Adjust padding for larger screens */
+        width: 200%;    
+        padding: 20px; 
     }
 
     .thin-border textarea {
-        width: 69vh;     /* This width might be too large for typical use, adjust as needed */
-        height: 200px;  /* Adjust height for larger screens */
+        width: 69vh;     
+        height: 200px;  
     }
 }
 
@@ -61,7 +61,7 @@
             </div>
 
             <div class="form-group thin-border col-md-6" >
-                <input type="file" name="images" multiple>
+                <input title="img-desc" type="file" name="images" multiple>
                 <label for="{{ form.image.id_for_label }}">Blog Description Image</label>
                 {{ form.image }}
             </div>
