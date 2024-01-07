@@ -169,7 +169,7 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = MAIL
 EMAIL_HOST_PASSWORD = PASSWORD
-DEFAULT_FROM_EMAIL = 'Bloga<noreply@bloga.blog2.1@gmail.com>'
+DEFAULT_FROM_EMAIL = 'noreply@bloga.blog2.1@gmail.com'
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
