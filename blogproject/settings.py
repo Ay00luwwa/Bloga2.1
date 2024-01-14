@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-from .credentials import MAIL, PASSWORD
+# from .credentials import MAIL, PASSWORD
 from pathlib import Path
 import os
 
@@ -167,8 +167,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = MAIL
-EMAIL_HOST_PASSWORD = PASSWORD
+EMAIL_HOST_USER = 'bloga.blog2.1@gmail.com'
+EMAIL_HOST_PASSWORD = 'vdyj xflp umab otks'
 DEFAULT_FROM_EMAIL = 'noreply@bloga.blog2.1@gmail.com'
 
 AUTHENTICATION_BACKENDS = [
